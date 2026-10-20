@@ -5,6 +5,8 @@
 	import Footer from '#lib/footer/footer.svelte';
 	import Header from '#lib/header.svelte';
 	import ContactModal from '#lib/contact_modal/contact_modal.svelte';
+	import MobileNav from '#lib/navigation/mobile_nav/mobile_nav.svelte';
+	import BackToTop from '#lib/back_to_top/back_to_top.svelte';
 
 	let { children }: LayoutProps = $props();
 </script>
@@ -14,8 +16,11 @@
 </svelte:head>
 
 <div class="page_outline"></div>
-<Header />
 <ContactModal />
+<MobileNav />
+<BackToTop />
+
+<Header />
 <main>
 	{@render children()}
 </main>
