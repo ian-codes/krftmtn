@@ -17,7 +17,8 @@
 		position: sticky;
 		top: 0;
 		z-index: 5;
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
+		backdrop-filter: blur(10px);
 		padding: 0.5em 1em;
 		margin-bottom: 2em;
 		color: white !important;
@@ -34,7 +35,7 @@
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 800px) {
 		header {
 			position: relative;
 			background: none;

@@ -38,6 +38,10 @@
 {/if}
 
 <style>
+	button {
+		cursor: pointer;
+	}
+
 	footer {
 		display: none;
 		justify-content: center;
@@ -73,7 +77,7 @@
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 800px) {
 		footer {
 			display: flex;
 		}

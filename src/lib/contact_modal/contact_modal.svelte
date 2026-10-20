@@ -65,7 +65,7 @@
 		padding: 1.5rem 1.5rem 0 1.5rem;
 		max-width: 500px;
 		width: 100%;
-		max-height: 100vh;
+		max-height: 100dvh;
 		margin: auto;
 
 		&::backdrop {

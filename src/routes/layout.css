@@ -73,7 +73,29 @@ body {
 section {
 	padding: 1em;
 	max-width: 1200px;
+	width: 100%;
 	margin: auto;
+
+	.section_title {
+		position: relative;
+		color: var(--color-main);
+		opacity: 0.7;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 0.5em;
+		display: inline-block;
+		margin-bottom: 1em;
+
+		&::after {
+			position: absolute;
+			bottom: -4px;
+			left: 0;
+			width: 120%;
+			height: 1px;
+			background: var(--fancy-gradient);
+		}
+	}
 }
 
 h1,
@@ -98,4 +120,10 @@ h2 {
 
 .accent {
 	color: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+	h2 {
+		font-size: 1.5rem;
+	}
 }

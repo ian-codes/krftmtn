@@ -7,13 +7,12 @@
 </script>
 
 <Hero />
-<Pricing />
-<About />
 <Services />
+<Pricing />
 <Philosophy />
+<About />
 
 <style>
 	@media (max-width: 600px) {
-
 	}
 </style>

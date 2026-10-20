@@ -23,10 +23,11 @@
 
 <style>
 	main {
-		min-height: calc(100vh - 80px);
+		min-height: calc(100dvh - 80px);
 		display: flex;
 		flex-direction: column;
 		gap: 2em;
+		margin-bottom: 6em;
 	}
 
 	.page_outline {
@@ -35,5 +36,11 @@
 		position: fixed;
 		inset: 0;
 		border: 2px solid var(--color-accent);
+	}
+
+	@media (max-width: 600px) {
+		main {
+			gap: 1em;
+		}
 	}
 </style>

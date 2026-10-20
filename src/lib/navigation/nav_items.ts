@@ -1,13 +1,9 @@
-import type { NavItemType } from "./nav_item.type";
+import type { NavItemType } from './nav_item.type';
 
 export const NAV_ITEMS: NavItemType[] = [
 	{
 		title: 'services',
 		slug: 'services'
-	},
-	{
-		title: 'about',
-		slug: 'about'
 	},
 	{
 		title: 'pricing',
@@ -16,5 +12,9 @@ export const NAV_ITEMS: NavItemType[] = [
 	{
 		title: 'philosophy',
 		slug: 'philosophy'
+	},
+	{
+		title: 'about',
+		slug: 'about'
 	}
 ];
