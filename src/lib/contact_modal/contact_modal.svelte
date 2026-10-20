@@ -69,8 +69,8 @@
 		margin: auto;
 
 		&::backdrop {
-		background: rgb(0 0 0 / 50%);
-
+			background: rgb(0 0 0 / 50%);
+			backdrop-filter: blur(5px);
 		}
 	}
 	ul {

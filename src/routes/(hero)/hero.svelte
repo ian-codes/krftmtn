@@ -102,7 +102,7 @@
 	#mobile_img {
 		display: none;
 		background-image: url('./pullup.jpg');
-		background-position-y: -4em;
+		background-position-y: -2em;
 		background-repeat: no-repeat;
 		background-size: cover;
 		width: 100%;

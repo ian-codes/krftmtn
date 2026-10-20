@@ -2,6 +2,7 @@
 	import NavItem from '../nav_item.svelte';
 	import { NAV_ITEMS } from '../nav_items.ts';
 	import { mobileNavState } from './mobile_nav_state.svelte.ts';
+	
 	$effect(() => {
 		document.body.classList.toggle('disable_scroll', mobileNavState.open);
 	});

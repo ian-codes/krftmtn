@@ -3,12 +3,16 @@
 	import Burger from '../burger.svelte';
 	import Logo from '../logo.svelte';
 	import MsgIcon from './msg_icon.svelte';
+	import { contactModalState } from '#lib/contact_modal/contact_modal_state.svelte.ts';
 
 	let showFooter = $state(false);
-	let mobileNavOpen = $state(false);
 
 	function handleScroll() {
 		showFooter = window.scrollY > 53;
+	}
+
+	function handleContactButtonClick() {
+		contactModalState.open = !contactModalState.open;
 	}
 </script>
 
@@ -23,7 +27,9 @@
 					<Logo />
 				</div>
 				<div class="right">
-					<MsgIcon width="2em" />
+					<button onclick={handleContactButtonClick}>
+						<MsgIcon width="2em" />
+					</button>
 					<Burger />
 				</div>
 			</div>
@@ -47,7 +53,7 @@
 			padding: 0.5em 1em;
 			margin: 0 8px;
 			background: var(--fancy-gradient);
-			border-radius: .5em;
+			border-radius: 0.5em;
 			box-shadow:
 				0 2px 0 2px rgb(81, 81, 81),
 				0 5px 20px rgba(128, 128, 128, 0.4),
