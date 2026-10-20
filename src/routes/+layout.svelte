@@ -9,6 +9,8 @@
 	import BackToTop from '#lib/back_to_top/back_to_top.svelte';
 
 	let { children }: LayoutProps = $props();
+
+	let scrollable = $state()
 	let scrollY = $state();
 
 	function handleScroll(event: any) {
@@ -24,10 +26,11 @@
 	<div class="page_outline"></div>
 	<ContactModal />
 	<MobileNav {scrollY} />
-	<BackToTop {scrollY} />
+	<BackToTop {scrollY} {scrollable} />
 
 	<Header />
 	<div
+		bind:this={scrollable}
 		onscroll={handleScroll}
 		class="scrollable"
 	>

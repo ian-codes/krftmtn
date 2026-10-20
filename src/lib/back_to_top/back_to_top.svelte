@@ -2,14 +2,14 @@
 	import ChevronUpIcon from '../assets/icons/chevron_up_icon.svelte';
 	import { backToTopState } from './back_to_top_state.svelte';
 
-	let { scrollY } = $props();
+	let { scrollY, scrollable } = $props();
 
 	$effect(() => {
 		backToTopState.visible = scrollY > 53
 	})
 
 	function scrollUp() {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
+		scrollable.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 </script>
 
