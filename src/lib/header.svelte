@@ -1,4 +1,6 @@
 <script>
+	import { contactModalState } from './contact_modal/contact_modal_state.svelte';
+	import MsgIcon from './footer/msg_icon.svelte';
 	import Logo from './logo.svelte';
 	import DesktopNav from './navigation/desktop_nav/desktop_nav.svelte';
 </script>
@@ -9,6 +11,9 @@
 		<div class="desktop_nav">
 			<DesktopNav />
 		</div>
+		<button onclick={() => (contactModalState.open = true)}>
+			<MsgIcon width="2em" --color="var(--color-main)" />
+		</button>
 	</div>
 </header>
 
@@ -17,16 +22,15 @@
 		position: sticky;
 		top: 0;
 		z-index: 5;
-		background: rgba(255, 255, 255, 0.8);
+		background: rgba(255, 255, 255, 0.5);
 		backdrop-filter: blur(10px);
 		padding: 0.5em 1em;
-		margin-bottom: 2em;
 		color: white !important;
-		outline: 2px dotted var(--color-main);
+		outline: 1px dotted var(--color-main);
 		border-radius: 0 0 1em 1em;
 
 		.inner {
-			max-width: 1200px;
+			max-width: 1300px;
 			margin: auto;
 			display: flex;
 			gap: 1em;
@@ -35,12 +39,23 @@
 		}
 	}
 
-	@media (max-width: 800px) {
+	button {
+		display: block;
+		padding: 0;
+		margin: 0;
+		transition: var(--transition);
+		cursor: pointer;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		button:hover {
+			scale: 1.05;
+		}
+	}
+
+	@media (max-width: 900px) {
 		header {
 			position: relative;
-			background: none;
-			border: none;
-			outline: none;
 			margin-bottom: 0em;
 		}
 

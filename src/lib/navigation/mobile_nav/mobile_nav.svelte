@@ -8,14 +8,18 @@
 	import { NAV_ITEMS } from '../nav_items.ts';
 	import { mobileNavState } from './mobile_nav_state.svelte.ts';
 
+	let { scrollY } = $props();
+
 	$effect(() => {
 		document.body.classList.toggle(
 			'disable_scroll',
 			mobileNavState.open
 		);
 		if (mobileNavState.open) {
-			backToTopState.visible = false
+			backToTopState.visible = false;
 		}
+
+		showNav = scrollY > 53;
 	});
 
 	let showNav = $state(false);
@@ -25,7 +29,7 @@
 	}
 
 	function handleContactButtonClick() {
-		contactModalState.open = !contactModalState.open;
+		contactModalState.open = true;
 	}
 </script>
 
@@ -34,14 +38,12 @@
 {#if showNav}
 	<nav>
 		<div class="outer">
-			<div class="inner">
-				<div class="flex gap-3">
-					<Logo size='1.25em' />
-				</div>
+			<Logo size="1.25em" />
+			<div class="right">
+				<button onclick={handleContactButtonClick}>
+					<MsgIcon width="2em" />
+				</button>
 				<div class="right">
-					<button onclick={handleContactButtonClick}>
-						<MsgIcon width="2em" />
-					</button>
 					<Burger />
 				</div>
 			</div>
@@ -66,12 +68,6 @@
 		cursor: pointer;
 	}
 
-	@media (max-width: 800px) {
-		nav {
-			display: flex !important;
-		}
-	}
-
 	nav {
 		display: none;
 		justify-content: center;
@@ -82,6 +78,9 @@
 		margin: auto;
 
 		.outer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 			width: 100%;
 			max-width: var(--max-width);
 			padding: 0.5em 1em;
@@ -92,17 +91,11 @@
 				0 2px 0 2px rgb(81, 81, 81),
 				0 5px 20px rgba(128, 128, 128, 0.4),
 				inset 2px 2px 3px rgba(255, 255, 255, 0.5);
-		}
-
-		.inner {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
 
 			.right {
 				display: inherit;
-				gap: 0.2em;
 				align-items: inherit;
+				gap: .5rem;
 			}
 		}
 	}
@@ -112,15 +105,17 @@
 		position: fixed;
 		inset: 0;
 		background: var(--color-bg);
-	}
-
-	ol {
-		height: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: end;
 		justify-content: end;
 		gap: 1em;
 		padding-bottom: 5em;
+	}
+
+	@media (max-width: 900px) {
+		nav {
+			display: flex !important;
+		}
 	}
 </style>

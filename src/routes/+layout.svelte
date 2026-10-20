@@ -9,30 +9,52 @@
 	import BackToTop from '#lib/back_to_top/back_to_top.svelte';
 
 	let { children }: LayoutProps = $props();
+	let scrollY = $state();
+
+	function handleScroll(event: any) {
+		scrollY = event?.currentTarget.scrollTop
+	}
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="page_outline"></div>
-<ContactModal />
-<MobileNav />
-<BackToTop />
+<div class="app_shell">
+	<div class="page_outline"></div>
+	<ContactModal />
+	<MobileNav {scrollY} />
+	<BackToTop {scrollY} />
 
-<Header />
-<main>
-	{@render children()}
-</main>
-<Footer />
+	<Header />
+	<div
+		onscroll={handleScroll}
+		class="scrollable"
+	>
+		<main>
+			{@render children()}
+		</main>
+		<Footer />
+	</div>
+</div>
 
 <style>
+	.app_shell {
+		height: 100vh;
+		height: 100dvh;
+	}
+
+	.scrollable {
+		height: 100dvh;
+		overflow-y: scroll;
+	}
+
 	main {
-		min-height: calc(100dvh - 80px);
 		display: flex;
 		flex-direction: column;
 		gap: 2em;
-		margin-bottom: 6em;
+		padding-top: 2em;
+		padding-bottom: 6em;
 	}
 
 	.page_outline {
@@ -40,11 +62,12 @@
 		pointer-events: none;
 		position: fixed;
 		inset: 0;
-		border: 2px solid var(--color-accent);
+		border: 2px solid var(--color-main);
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 900px) {
 		main {
+			padding-top: 0;
 			gap: 1em;
 		}
 	}

@@ -18,4 +18,10 @@
 		display: block;
 		font-size: .8em;
 	}
+
+	@media (max-width: 900px) {
+		footer {
+			padding-bottom: 8rem !important;
+		}
+	}
 </style>

@@ -59,7 +59,7 @@
 
 <style>
 	dialog {
-		position: relative;
+		position: fixed;
 		border: 0;
 		border-radius: 0.5rem;
 		padding: 1.5rem 1.5rem 0 1.5rem;

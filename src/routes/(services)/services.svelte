@@ -21,7 +21,7 @@
 
 <section id="services">
 	<span class="section_title">Services</span>
-	<h2>What I can do <e class="accent">for you.</e></h2>
+	<h2>What I can do for <e class="accent"> you.</e></h2>
 	<p>
 		Below are some of the services I offer. Don't hesitate
 		to reach out if you're looking for help with something

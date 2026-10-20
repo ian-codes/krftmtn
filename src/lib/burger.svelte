@@ -25,9 +25,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		gap: 0.25em;
-		padding: 0.5em;
-		border-radius: 0.5em;
+		gap: 0.33em;
 		border: 0;
 		background: transparent;
 		cursor: pointer;
@@ -37,7 +35,7 @@
 		display: block;
 		width: 1.5em;
 		height: 3px;
-		border-radius: 2px;
+		border-radius: 3px;
 		background: white;
 	}
 

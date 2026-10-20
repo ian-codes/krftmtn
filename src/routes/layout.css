@@ -48,6 +48,8 @@ html {
 }
 
 body {
+	overflow: hidden;
+	height: 100%;
 	z-index: 1;
 	position: relative;
 	color: var(--font-color-1);
